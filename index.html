@@ -22,6 +22,30 @@
         <a class="navbar-brand" href="#">Change Password</a>
         <a class="navbar-brand" href="#">Log Out</a>
 
+  <form id="sign-up">
+    <legend>Sign-Up-Form</legend>
+    <input name="credentials[email]" type="text" placeholder="email"/>
+    <input name="credentials[password]" type="password" placeholder="password"/>
+    <input name="credentials[password_confirmation]" type="password" placeholder="password password confirmation"/>
+    <input type="submit"/>
+  </form>
+
+  <form id="sign-in">
+    <legend>Sign-In-Form</legend>
+    <input name="credentials[email]" type="text" placeholder="email"/>
+    <input name="credentials[password]" type="password" placeholder="password"/>
+    <input type="submit"/>
+  </form>
+
+  <form id="change-password">
+    <legend>Change Password Form</legend>
+    <input name="password[old]" type="password" placeholder="old password"/>
+    <input name="passwords[new]" type="password" placeholder="new password"/>
+    <input type="submit"/>
+  </form>
+
+
+
   <h1>Tic Tac Toe</h1>
 
   <h2>Rules</h2>
