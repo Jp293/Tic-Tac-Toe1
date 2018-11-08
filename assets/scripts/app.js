@@ -11,9 +11,11 @@
 // If player1 = x then player2 must be o.
 // If player1 = o then player2 must be x.
 //
-$(() => {
-  // your JS code goes here
-  const createBoard = function () {
-  }
+const authEvents = require('./auth/events.js')
 
+$(() => {
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  $('#sign-out').on('submit', authEvents.onSignOut)
 })

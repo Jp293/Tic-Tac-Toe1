@@ -3,7 +3,7 @@ const store = require('../store.js')
 
 const signUp = function (inputData) {
   return $.ajax({
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-up',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(inputData)
@@ -11,7 +11,7 @@ const signUp = function (inputData) {
 }
 const signIn = function (inputData) {
   return $.ajax({
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-in',
     method: 'POST',
     contentType: 'application/json',
     data: JSON.stringify(inputData)
@@ -19,7 +19,7 @@ const signIn = function (inputData) {
 }
 const changePassword = function (inputData) {
   return $.ajax({
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/change-password',
     method: 'PATCH',
     headers: {
       Authorization: `Token token=${store.user.token}`
@@ -30,7 +30,7 @@ const changePassword = function (inputData) {
 }
 const signOut = function () {
   return $.ajax({
-    url: 'https://tic-tac-toe-wdi.herokuapp.com/',
+    url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-out',
     method: 'DELETE',
     headers: {
       Authorization: `Token token=${store.user.token}`
