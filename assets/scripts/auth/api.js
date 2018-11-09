@@ -1,7 +1,8 @@
 'use strict'
+
 const store = require('../store.js')
 
-const signUp = function (inputData) {
+const signUp = (inputData) => {
   return $.ajax({
     url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-up',
     method: 'POST',
@@ -9,7 +10,7 @@ const signUp = function (inputData) {
     data: JSON.stringify(inputData)
   })
 }
-const signIn = function (inputData) {
+const signIn = (inputData) => {
   return $.ajax({
     url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-in',
     method: 'POST',
@@ -17,7 +18,7 @@ const signIn = function (inputData) {
     data: JSON.stringify(inputData)
   })
 }
-const changePassword = function (inputData) {
+const changePassword = (inputData) => {
   return $.ajax({
     url: 'https://tic-tac-toe-wdi.herokuapp.com/change-password',
     method: 'PATCH',
@@ -28,7 +29,7 @@ const changePassword = function (inputData) {
     data: JSON.stringify(inputData)
   })
 }
-const signOut = function () {
+const signOut = () => {
   return $.ajax({
     url: 'https://tic-tac-toe-wdi.herokuapp.com/sign-out',
     method: 'DELETE',
