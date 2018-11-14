@@ -18,7 +18,7 @@ const switchPlayer = function (playerTurn) {
   if (store.invalid === true) {
     return
   }
-  if (store.wrong === false) {
+  if (store.invalid === false) {
     const player = playerTurn === 'X' ? 'O' : 'X'
     store.player = player
     //  add message indicating who's turn it is.

@@ -20,9 +20,14 @@ $black: #000;
 }
 
 .box {
+  display: flex;
+  justify-content: center;
   align-items: center;
   border: 3px solid $black;
-  display: flex;
   height: 80px;
-  justify-content: center;
+}
+.tBoard {
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  margin: 0 auto;
 }
