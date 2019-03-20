@@ -3,13 +3,13 @@
 const store = {
 }
 
-const gameBoard = ['', '', '', '', '', '', '', '']
+const gameBoard = ['', '', '', '', '', '', '', '', '']
 // empty array with indexes 0-8//
 
-const player = 'X'
+// const player = 'X'
 
 module.exports = {
   store,
-  gameBoard,
-  player
+  gameBoard
+  // player
 }

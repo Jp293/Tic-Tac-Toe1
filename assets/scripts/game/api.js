@@ -14,7 +14,7 @@ const createGame = function () {
   })
 }
 
-const getGame = function () {
+const getGame = function (data) {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/games',
@@ -22,11 +22,12 @@ const getGame = function () {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringify
+    data: JSON.stringify(data)
   })
 }
 
-const updateGame = function (id, value, over) {
+const updateGame = function (value, over) {
+  console.log('value', value)
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/games/${store.game}`,
@@ -37,7 +38,7 @@ const updateGame = function (id, value, over) {
     data: JSON.stringify({
       'game': {
         'cell': {
-          'index': id,
+          'index': store.id,
           'value': value
         },
         'over': over

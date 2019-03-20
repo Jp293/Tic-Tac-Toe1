@@ -3,8 +3,8 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
-const cells = require('../app.js')
-const currentPlayer = require('../app.js')
+// const cells = require('../app.js')
+// const currentPlayer = require('../app.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
@@ -35,24 +35,27 @@ const onSignOut = function () {
     .then(ui.signOutSuccess)
     .catch(ui.failure)
 }
-const onNewGame = function (event) {
-  event.preventDefault()
-  api.newGame()
-    .then(ui.newGameSuccess)
-    .catch(ui.newGamefailure)
-}
 
-const onMakeMove = function (event) {
-  cells[event.target.id] = currentPlayer
-}
-$('.box').on('click', function (event) {
-  $(event.target).append(currentPlayer)
-})
+// The code below most likely belongs in the game/events.js file!!!
+
+// const onNewGame = function (event) {
+//   event.preventDefault()
+//   api.newGame()
+//     .then(ui.newGameSuccess)
+//     .catch(ui.newGamefailure)
+// }
+//
+// const onMakeMove = function (event) {
+//   cells[event.target.id] = currentPlayer
+// }
+// $('.box').on('click', function (event) {
+//   $(event.target).append(currentPlayer)
+// })
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut,
-  onMakeMove,
-  onNewGame
+  onSignOut
+  // onMakeMove,
+  // onNewGame
 }

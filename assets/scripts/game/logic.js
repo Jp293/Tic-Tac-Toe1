@@ -2,14 +2,14 @@
 
 const store = require('../store.js')
 
-const gameRoot = function (id, value, over) {
+const gameRoot = function (value, over) {
   if (over === true) {
     return
   }
-  if (store.cells[id] === '') {
-    store.cells[id] = value
+  if (store.cells[store.id] === '') {
+    store.cells[store.id] = value
     store.invalid = false
-  } else if (store.cells[id] === 'X' || 'O') {
+  } else if (store.cells[store.id] === 'X' || 'O') {
     store.invalid = true
   }
 }
