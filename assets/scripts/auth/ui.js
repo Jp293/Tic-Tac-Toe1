@@ -5,7 +5,7 @@ const signUpSuccess = function (signUpResponse) {
   $('#message').html('You signed up successfully.')
   $('#message').addClass('success-message')
   $('#message').removeClass('error-message')
-  console.log('Signed up success')
+  console.log('Sign up success')
 }
 const failure = function (failureResponse) {
   $('#message').html('Something went wrong.')
