@@ -19,15 +19,13 @@ const onGetGame = function (event) {
 }
 const onUpdateGame = function (event) {
   event.preventDefault()
-  store.id = $(event.target).data().cellIndex
+  const data = $(event.target).data().cellIndex
   const player = store.player
-  console.log('my store is', store)
-  console.log('my player is ', player)
   const over = store.over
-  api.updateGame(player)
-    .then(ui.newMove)
+  api.updateGame(data, player)
+    .then(ui.newMove(data))
     .catch(ui.failure)
-  logic.gameRoot(player, over)
+  logic.gameRoot(data, player, over)
   logic.switchPlayer(player)
   logic.gameWin(store.cells)
 }

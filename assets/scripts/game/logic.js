@@ -2,14 +2,15 @@
 
 const store = require('../store.js')
 
-const gameRoot = function (value, over) {
+const gameRoot = function (id, value, over) {
   if (over === true) {
     return
   }
-  if (store.cells[store.id] === '') {
-    store.cells[store.id] = value
+  if (store.cells[id] === '') {
+    store.cells[id] = value
     store.invalid = false
-  } else if (store.cells[store.id] === 'X' || 'O') {
+  } else if (store.cells[id] === 'X' || 'O') {
+    $('.game-message').html('Incorrect')
     store.invalid = true
   }
 }
@@ -22,7 +23,7 @@ const switchPlayer = function (playerTurn) {
     const player = playerTurn === 'X' ? 'O' : 'X'
     store.player = player
     //  add message indicating who's turn it is.
-    $('#message').html(`It's Player: ${store.player}'s' Turn`)
+    $('.sub-message').html(`It's Player ${store.player}'s' Turn`)
     return player
   }
 }
@@ -39,7 +40,7 @@ const gameWin = function (boardcell) {
     store.player = 'X'
     store.winner = 'X'
     // message player X won!
-    $('#board-message').html('Player X wInS!')
+    $('.sub-message').html('Player X wInS!')
   } else if ((boardcell[0] === 'O' && boardcell[1] === 'O' && boardcell[2] === 'O') ||
     (boardcell[3] === 'O' && boardcell[4] === 'O' && boardcell[5] === 'O') ||
     (boardcell[6] === 'O' && boardcell[7] === 'O' && boardcell[8] === 'O') ||
@@ -52,7 +53,7 @@ const gameWin = function (boardcell) {
     store.player = 'X'
     store.winner = 'O'
     // message player O won!
-    $('#board-message').html('Player O wInS!')
+    $('.sub-message').html('Player O wInS!')
   } else if (boardcell[0] !== '' && boardcell[1] !== '' && boardcell[2] !== '' &&
     boardcell[3] !== '' && boardcell[4] !== '' && boardcell[5] !== '' &&
     boardcell[6] !== '' && boardcell[7] !== '' && boardcell[8] !== '') {
@@ -60,7 +61,7 @@ const gameWin = function (boardcell) {
     store.player = 'X'
     store.winner = 'Tie'
     // message player with a tied game.
-    $('#board-message').html('tIe')
+    $('.sub-message').html('tIe')
   }
 }
 

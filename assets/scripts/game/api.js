@@ -2,7 +2,7 @@
 const config = require('../config.js')
 const store = require('../store.js')
 
-const createGame = function () {
+const createGame = function (inputData) {
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/games',
@@ -10,7 +10,7 @@ const createGame = function () {
       Authorization: `Token token=${store.user.token}`
     },
     contentType: 'application/json',
-    data: JSON.stringify
+    data: JSON.stringify(inputData)
   })
 }
 
@@ -26,8 +26,7 @@ const getGame = function (data) {
   })
 }
 
-const updateGame = function (value, over) {
-  console.log('value', value)
+const updateGame = function (index, value, over) {
   return $.ajax({
     method: 'PATCH',
     url: config.apiUrl + `/games/${store.game}`,
@@ -38,7 +37,7 @@ const updateGame = function (value, over) {
     data: JSON.stringify({
       'game': {
         'cell': {
-          'index': store.id,
+          'index': index,
           'value': value
         },
         'over': over
