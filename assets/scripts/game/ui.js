@@ -15,6 +15,12 @@ const onCreateGameSuccess = function (createGame) {
   $('.box').empty()
 }
 
+const onGetGameSuccess = (gameSuccess) => {
+  $('.sub-message').html(`Total games played: ${gameSuccess.games.length}`)
+  $('.sub-message').addClass('success-message')
+  $('.sub-message').removeClass('error-message')
+}
+
 const failure = function () {
   $('.game-message').html('Something went wrong, try again.')
   $('.game-message').removeClass('success-message')
@@ -38,6 +44,7 @@ const newMove = function (data) {
 
 module.exports = {
   onCreateGameSuccess,
+  onGetGameSuccess,
   failure,
   newMove
 
