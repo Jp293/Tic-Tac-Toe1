@@ -1,6 +1,30 @@
 @import '~bootstrap/scss/bootstrap';
+
 $black: #000;
 
+body {
+  background-color: #f7c16a;
+  text-align: center;
+  font-family: 'Rubik', sans-serif;
+}
+
+input {
+  margin-left: 5px;
+}
+
+button {
+  border-radius: 8px;
+  margin-bottom: 40px;
+}
+
+input[type=submit] {
+  border-radius: 8px;
+}
+
+h4 {
+  text-align: center;
+  max-width: 500px;
+}
 .border {
   border: 3px solid $black;
   margin: 20px;
@@ -23,11 +47,15 @@ $black: #000;
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid $black;
+  border: 3px dashed $black;
   height: 80px;
 }
 .tBoard {
   display: grid;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  width: 350px;
+  height: 350px;
   margin: 0 auto;
+  border: 4px hidden;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  border-radius: 10px;
 }

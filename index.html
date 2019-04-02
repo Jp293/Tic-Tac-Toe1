@@ -7,62 +7,71 @@
 
   <!-- Do not add `link` tags-->
   <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
-
+<link href="https://fonts.googleapis.com/css?family=Rubik|VT323" rel="stylesheet">
   <!-- Do not add `script` tags-->
   <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
   <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
 </head>
 
 <body>
+  <div class="content">
 
-  <h1>Tic Tac Toe</h1>
+    <h1>Tic Tac Toe</h1>
 
-  <p class="auth-message"></p>
-  <form id="sign-up-form">
-    <legend>Sign-Up-Form</legend>
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <input name="credentials[password_confirmation]" type="password" placeholder="password confirmation">
-    <input type="submit">
-  </form>
-  <!-- <p id="message"></p> -->
-  <form id="sign-in-form">
-    <legend>Sign-In-Form</legend>
-    <input name="credentials[email]" type="text" placeholder="email">
-    <input name="credentials[password]" type="password" placeholder="password">
-    <input type="submit">
-  </form>
-  <!-- <p id="message"></p> -->
-  <form id="change-password-form" class="hidden">
-    <legend>Change Password Form</legend>
-    <input name="passwords[old]" type="password" placeholder="old password">
-    <input name="passwords[new]" type="password" placeholder="new password">
-    <input type="submit">
-  </form>
+      <h2 class="auth-message"></h2>
+        <nav class="navbar navbar-light bg-light">
+            <div class="form-group">
+              <form id="sign-up-form" class="form-inline">
+                <legend>Sign-Up-Form</legend>
+                <input name="credentials[email]" class="form-control" type="text" placeholder="email">
+                <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+                <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="password confirmation">
+                <input type="submit">
+              </form>
+          </div>
+            <!-- <p id="message"></p> -->
+            <div class="form-group">
+              <form id="sign-in-form" class="form-inline">
+                <legend>Sign-In-Form</legend>
+                <input name="credentials[email]" class="form-control" type="text" placeholder="email">
+                <input name="credentials[password]" class="form-control" type="password" placeholder="password">
+                <input type="submit">
+                </form>
+              </div>
+            <!-- <p id="message"></p> -->
+            <div class="form-group">
+              <form id="change-password-form" class="hidden form-inline">
+                <legend>Change Password Form</legend>
+                <input name="passwords[old]" class="form-control" type="password" placeholder="old password">
+                <input name="passwords[new]" class="form-control" type="password" placeholder="new password">
+                <input type="submit">
+                </form>
+              </div>
 
+          </nav>
+</div>
   <br>
 
   <button id="sign-out-button" class="hidden"> Sign Out </button>
 
   <div class="game-container hidden">
-  <h2>Rules</h2>
-  <p>The rules of the game are very simple.</p>
-  <ol>
-    <li>Tic Tac Toe (T.T.T) is played on a 3 square grid system.</li>
-    <li>The first player is chooses a token (either X or O) and the second player is assigned the unselected token.</li>
-    <li>Players will place their tokens on individuals cells inside the grid and they cannot repeat.</li>
-    <li>The first player to get 3 of their tokens in a row (up, down, across, or diagonally) * ;) wins the game.</li>
-    <li>If all 9 cells are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</li>
-  </ol>
+  <h2>Rules:</h2>
+    <br>
+    <p>Tic Tac Toe (T.T.T) is played on a 3 x 3 grid system.</p>
+    <p>The first player selects a token (either X or O) and the second player is assigned the unselected token.</p>
+    <p>Players will place their tokens on individuals cells inside the grid and they cannot repeat.</p>
+    <p>The first player to get 3 of their tokens in a row (up, down, across, or diagonally) wins the game.</p>
+    <p>If all 9 cells are full, the game is over. If no player has 3 marks in a row, the game ends in a tie.</p>
   <br> <!-- leave room for gameboard below -->
 
   <div>
-    <p class="game-message"></p>
-    <p class="sub-message"></p>
+    <h3 class="game-message"></h3>
+    <h3 class="sub-message"></h3>
+    <h3 class="info-message"></h3>
   </div>
 
   <div class="controls">
-      <button id='create-new-game'> NeW TiC</button>
+      <button id='create-new-game'> NeW gAmE</button>
       <button id='total-games'>tOtAl GaMiEs</button>
   </div>
   <div class="board-container">

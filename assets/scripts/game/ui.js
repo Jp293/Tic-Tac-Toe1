@@ -16,7 +16,7 @@ const onCreateGameSuccess = function (createGame) {
 }
 
 const onGetGameSuccess = (gameSuccess) => {
-  $('.sub-message').html(`Total games played: ${gameSuccess.games.length}`)
+  $('.info-message').html(`Total games played: ${gameSuccess.games.length}`)
   $('.sub-message').addClass('success-message')
   $('.sub-message').removeClass('error-message')
 }
@@ -47,5 +47,4 @@ module.exports = {
   onGetGameSuccess,
   failure,
   newMove
-
 }
