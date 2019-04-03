@@ -10,7 +10,8 @@ const gameRoot = function (id, value, over) {
     store.cells[id] = value
     store.invalid = false
   } else if (store.cells[id] === 'X' || 'O') {
-    $('.game-message').html('Incorrect')
+    $('.game-message').html('Box already clicked')
+    $('.game-message').fadeOut(500)
     store.invalid = true
   }
 }
